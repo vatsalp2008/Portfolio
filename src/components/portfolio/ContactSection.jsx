@@ -14,28 +14,39 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Formspree endpoint - replace YOUR_FORM_ID with your actual Formspree ID
+    const formspreeUrl = "https://formspree.io/f/xrbrgqav"; // ← REPLACE THIS!
+    
+    try {
+      const response = await fetch(formspreeUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-    // Create mailto link
-    const mailtoLink = `mailto:vatsalp2008@gmail.com?subject=Message from ${encodeURIComponent(
-      formData.name
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-
-    // Open email client
-    window.location.href = mailtoLink;
-
-    // Simulate submission
-    setTimeout(() => {
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: "", email: "", message: "" });
+        }, 3000);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-
-      // Reset after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: "", email: "", message: "" });
-      }, 3000);
-    }, 500);
+    }
   };
 
   const handleChange = (e) => {
@@ -161,7 +172,7 @@ export default function ContactSection() {
                     className="flex items-center justify-center gap-2"
                   >
                     <CheckCircle2 className="w-5 h-5" />
-                    Opening Email Client
+                    Message Sent Successfully!
                   </motion.span>
                 ) : isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
