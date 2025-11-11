@@ -49,7 +49,7 @@ export default function AboutSection() {
             <div className="relative aspect-square rounded-sm overflow-hidden border border-[#DC0000]/20 bg-gradient-to-br from-[#1a1a1a] to-[#121212]">
               {/* Your Professional Photo */}
               <img 
-                src="/images/vatsal-profile.jpg" 
+                src="./images/vatsal-profile.jpg" 
                 alt="Vatsal Patel"
                 className="w-full h-full object-cover"
               />
