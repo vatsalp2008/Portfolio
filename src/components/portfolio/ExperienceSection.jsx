@@ -6,6 +6,19 @@ export default function ExperienceSection() {
   const experiences = [
     {
       company: "Kalini Industries",
+      role: "Machine Learning Intern",
+      period: "Dec. 2024 - March 2025",
+      location: "Mumbai, India",
+      description: "Worked on applied machine learning solutions for industrial systems, focusing on predictive maintenance, model reliability, and production deployment.",
+      achievements: [
+        "Built and evaluated equipment failure prediction models using TensorFlow and Scikit-learn, achieving 85% accuracy and contributing to a 20% reduction in unplanned downtime",
+        "Improved model robustness by 15% in F1-score through feature engineering, hyperparameter tuning, and cross-team collaboration on multiple predictive models",
+        "Designed automated retraining and monitoring pipelines to address model drift, reducing model staleness by 60% and ensuring consistent performance in production",
+      ],
+      tech: ["Python", "TensorFlow", "Scikit-learn", "Machine Learning", "Data Pipelines"],
+    },
+    {
+      company: "Kalini Industries",
       role: "Software Development Intern",
       period: "Jan. 2024 - April 2024",
       location: "Mumbai, India",
@@ -18,6 +31,7 @@ export default function ExperienceSection() {
       tech: ["Python", "JavaScript", "Machine Learning", "Data Pipelines"],
     },
   ];
+
 
   return (
     <section className="relative py-24 md:py-32 px-6 md:px-12 bg-[#1a1a1a]">
