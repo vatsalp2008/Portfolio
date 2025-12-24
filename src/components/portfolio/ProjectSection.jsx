@@ -11,7 +11,7 @@ export default function ProjectsSection() {
       description:
         "Full-stack e-commerce solution with real-time inventory management, payment processing, and analytics dashboard.",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      github: "#",
+      github: "https://github.com/vatsalp2008/E-commerce-Platform",
       demo: "#",
       featured: true,
     },
