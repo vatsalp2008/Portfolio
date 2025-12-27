@@ -48,7 +48,7 @@ export default function WorkSection() {
       description: "Machine learning application for real estate valuation with advanced feature engineering and data preprocessing pipelines.",
       tags: ["Python", "Scikit-learn", "Feature Engineering", "ML"],
       image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68fdae81f7836cad567112d4/2352b4b2e_4cbc6ac7-6a19-4563-b3cf-684f694fe928.png",
-      github: null,
+      github: "https://github.com/vatsalp2008",
     },
     {
       title: "E-Commerce ERP System",
@@ -57,7 +57,7 @@ export default function WorkSection() {
       description: "Full-stack Enterprise Resource Planning system for e-commerce operations with integrated business process automation.",
       tags: ["Full Stack", "ERP", "Automation", "Database Design"],
       image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68fdae81f7836cad567112d4/e838189c4_ea3209c4-39b9-4136-abfa-5ac3db582d3e.png",
-      github: null,
+      github: "https://github.com/vatsalp2008",
     },
     {
       title: "Industrial Automation & Predictive Maintenance",
@@ -66,7 +66,16 @@ export default function WorkSection() {
       description: "Developed IoT-based predictive maintenance solutions for industrial equipment, reducing downtime through ML-powered analytics.",
       tags: ["IoT", "Predictive Maintenance", "Industrial Automation", "Python"],
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80",
-      github: null,
+      github: "https://github.com/vatsalp2008",
+    },
+    {
+      title: "LLM-Powered Chess Agent",
+      company: "Northeastern University",
+      year: "2025",
+      description: "Advanced chess agent powered by LLMs (Llama 3.2, Mistral) achieving 85.7% accuracy improvement through prompt engineering, retry logic, and agent workflow orchestration.",
+      tags: ["Python", "Ollama", "LLMs", "Prompt Engineering", "Agentic AI"],
+      image: "public/images/chess-agent.jpg",
+      github: "https://github.com/vatsalp2008",
     },
   ];
 
