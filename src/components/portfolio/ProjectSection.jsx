@@ -5,7 +5,17 @@ import { ExternalLink, Github, Sparkles } from "lucide-react";
 export default function ProjectsSection() {
   const [hoveredProject, setHoveredProject] = useState(null);
 
-  const projects = [
+const projects = [
+    {
+      title: "LLM-Powered Chess Agent",
+      description:
+        "Advanced chess-playing agent leveraging large language models (Llama 3.2, Mistral) through Ollama. Implemented sophisticated prompt engineering strategies.",
+      tech: ["Python", "Ollama", "LLMs", "Prompt Engineering", "Agentic AI"],
+      github: "#",
+      demo: "#",
+      featured: true,
+      image: "/images/chess-agent.jpg",
+    },
     {
       title: "E-Commerce Platform",
       description:
@@ -112,11 +122,13 @@ export default function ProjectsSection() {
               className="group relative"
             >
               {/* Project Card */}
-              <div className="relative h-full bg-[#121212] border border-[#DC0000]/20 rounded-sm overflow-hidden transition-all duration-500 hover:border-[#DC0000] hover:shadow-2xl hover:shadow-[#DC0000]/20">
+              <div
+                className={`relative h-full bg-[#121212] border border-[#DC0000]/20 rounded-sm overflow-hidden transition-all duration-500 hover:border-[#DC0000] hover:shadow-2xl hover:shadow-[#DC0000]/20 flex flex-col`}
+              >
                 {/* Racing Border Animation */}
                 {hoveredProject === index && (
                   <motion.div
-                    className="absolute inset-0 pointer-events-none"
+                    className="absolute inset-0 pointer-events-none z-20"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
@@ -157,8 +169,20 @@ export default function ProjectsSection() {
                   </div>
                 )}
 
+                {/* Project Image */}
+                {project.image && (
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#121212] to-transparent opacity-80" />
+                  </div>
+                )}
+
                 {/* Content */}
-                <div className="p-6 h-full flex flex-col">
+                <div className="p-6 flex flex-col flex-grow relative z-10">
                   <h3 className="text-xl font-black text-[#F5F5F5] mb-3 group-hover:text-[#DC0000] transition-colors duration-300">
                     {project.title}
                   </h3>
@@ -180,7 +204,7 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-[#DC0000]/10">
+                  <div className="flex items-center gap-4 pt-4 border-t border-[#DC0000]/10 mt-auto">
                     <a
                       href={project.github}
                       className="flex items-center gap-2 text-[#C0C0C0] hover:text-[#DC0000] transition-colors duration-300"
@@ -202,7 +226,10 @@ export default function ProjectsSection() {
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-[#DC0000]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
-                    transform: hoveredProject === index ? "rotateX(2deg) rotateY(2deg)" : "none",
+                    transform:
+                      hoveredProject === index
+                        ? "rotateX(2deg) rotateY(2deg)"
+                        : "none",
                   }}
                 />
               </div>
