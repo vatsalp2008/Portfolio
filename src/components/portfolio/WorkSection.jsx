@@ -74,7 +74,7 @@ export default function WorkSection() {
       year: "2025",
       description: "Advanced chess agent powered by LLMs (Llama 3.2, Mistral) achieving 85.7% accuracy improvement through prompt engineering, retry logic, and agent workflow orchestration.",
       tags: ["Python", "Ollama", "LLMs", "Prompt Engineering", "Agentic AI"],
-      image: "public/images/chess-agent.jpg",
+      image: "./images/chess-agent.jpg",
       github: "https://github.com/vatsalp2008",
     },
   ];
