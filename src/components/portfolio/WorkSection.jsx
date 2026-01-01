@@ -84,7 +84,7 @@ export default function WorkSection() {
       description: "Interactive F1 race telemetry visualization with live driver tracking, leaderboard, and replay controls for race analysis.",
       tags: ["Python", "FastF1", "Arcade", "Data Visualization", "Real-time Processing"],
       image: "./images/preview.png",
-      github: "https://github.com/vatsalp2008",
+      github: "https://github.com/vatsalp2008/F1-Race-Replay",
     },
   ];
 
