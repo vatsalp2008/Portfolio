@@ -77,6 +77,15 @@ export default function WorkSection() {
       image: "./images/chess-agent.jpg",
       github: "https://github.com/vatsalp2008",
     },
+    {
+      title: "F1 Race Replay",
+      company: "Personal Project",
+      year: "2025",
+      description: "Interactive F1 race telemetry visualization with live driver tracking, leaderboard, and replay controls for race analysis.",
+      tags: ["Python", "FastF1", "Arcade", "Data Visualization", "Real-time Processing"],
+      image: "./images/preview.png",
+      github: "https://github.com/vatsalp2008",
+    },
   ];
 
   return (
