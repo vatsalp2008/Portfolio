@@ -6,6 +6,15 @@ export default function WorkSection() {
 
   const projects = [
     {
+      title: "MoodMeals",
+      company: "Personal Project",
+      year: "2026",
+      description: "An emotion-aware meal planning PWA that maps psychological states to nutritional profiles, using AI to provide science-backed meal recommendations for emotional regulation and cognitive performance.",
+      tags: ["React (PWA)", "FastAPI", "Claude API", "Supabase", "Spoonacular API", "Tailwind CSS"],
+      image: "./images/mood-meals.png",
+      github: "https://github.com/vatsalp2008/MoodMeals",
+    },
+    {
       title: "F1 Race Predictions 2025",
       company: "Personal Project",
       year: "2025",
@@ -24,15 +33,6 @@ export default function WorkSection() {
       github: "https://github.com/vatsalp2008/seattle-transit-pathfinder",
     },
     {
-      title: "Knightmare - Chess AI Engine",
-      company: "Northeastern University",
-      year: "2025",
-      description: "Advanced chess AI engine implementing minimax algorithm with alpha-beta pruning. Achieved 70% win rate in tournament testing with efficient board evaluation.",
-      tags: ["Python", "Minimax", "Alpha-Beta Pruning", "Game Theory"],
-      image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68fdae81f7836cad567112d4/11cf1bbcd_Screenshot2025-10-26at121222PM.png",
-      github: "https://github.com/vatsalp2008/Intelligent-Chess-AI",
-    },
-    {
       title: "Investment Prediction Platform",
       company: "Undergraduate Research",
       year: "2025",
@@ -40,24 +40,6 @@ export default function WorkSection() {
       tags: ["Python", "LSTM", "Random Forest", "TensorFlow"],
       image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68fdae81f7836cad567112d4/435df6d42_image.png",
       github: "https://github.com/vatsalp2008/Investment-Prediction",
-    },
-    {
-      title: "Housing Price Prediction Model",
-      company: "Academic Project",
-      year: "2023",
-      description: "Machine learning application for real estate valuation with advanced feature engineering and data preprocessing pipelines.",
-      tags: ["Python", "Scikit-learn", "Feature Engineering", "ML"],
-      image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68fdae81f7836cad567112d4/2352b4b2e_4cbc6ac7-6a19-4563-b3cf-684f694fe928.png",
-      github: "https://github.com/vatsalp2008",
-    },
-    {
-      title: "E-Commerce ERP System",
-      company: "Academic Project",
-      year: "2024",
-      description: "Full-stack Enterprise Resource Planning system for e-commerce operations with integrated business process automation.",
-      tags: ["Full Stack", "ERP", "Automation", "Database Design"],
-      image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68fdae81f7836cad567112d4/e838189c4_ea3209c4-39b9-4136-abfa-5ac3db582d3e.png",
-      github: "https://github.com/vatsalp2008",
     },
     {
       title: "Industrial Automation & Predictive Maintenance",
@@ -129,7 +111,7 @@ export default function WorkSection() {
                     <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                     <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                   </div>
-                  
+
                   {/* URL Bar */}
                   <div className="flex-1 ml-12 mr-12">
                     <div className="bg-[#1a1a1a] border border-gray-800 rounded-md px-3 py-1.5 text-xs text-gray-500 text-center">
@@ -149,14 +131,12 @@ export default function WorkSection() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className={`w-full h-full object-cover transition-all duration-700 ${
-                        hoveredProject === index ? "scale-105" : "scale-100"
-                      }`}
+                      className={`w-full h-full object-cover transition-all duration-700 ${hoveredProject === index ? "scale-105" : "scale-100"
+                        }`}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br from-[#DC0000]/40 to-transparent mix-blend-multiply transition-opacity duration-500 ${
-                        hoveredProject === index ? "opacity-0" : "opacity-30"
-                      }`}
+                      className={`absolute inset-0 bg-gradient-to-br from-[#DC0000]/40 to-transparent mix-blend-multiply transition-opacity duration-500 ${hoveredProject === index ? "opacity-0" : "opacity-30"
+                        }`}
                     />
                   </a>
                 ) : (
@@ -164,14 +144,12 @@ export default function WorkSection() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className={`w-full h-full object-cover transition-all duration-700 ${
-                        hoveredProject === index ? "scale-105" : "scale-100"
-                      }`}
+                      className={`w-full h-full object-cover transition-all duration-700 ${hoveredProject === index ? "scale-105" : "scale-100"
+                        }`}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br from-[#DC0000]/40 to-transparent mix-blend-multiply transition-opacity duration-500 ${
-                        hoveredProject === index ? "opacity-0" : "opacity-30"
-                      }`}
+                      className={`absolute inset-0 bg-gradient-to-br from-[#DC0000]/40 to-transparent mix-blend-multiply transition-opacity duration-500 ${hoveredProject === index ? "opacity-0" : "opacity-30"
+                        }`}
                     />
                   </div>
                 )}
@@ -221,8 +199,8 @@ export default function WorkSection() {
             <div className="text-sm text-gray-500">ML Model Accuracy</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-[#DC0000] mb-2">70%</div>
-            <div className="text-sm text-gray-500">Chess AI Win Rate</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#DC0000] mb-2">85.7%</div>
+            <div className="text-sm text-gray-500">LLM Agent Accuracy</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-[#DC0000] mb-2">97%</div>
