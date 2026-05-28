@@ -6,13 +6,24 @@ export default function WorkSection() {
 
   const projects = [
     {
-      title: "MoodMeals",
-      company: "Personal Project",
+      title: "TheManager",
+      company: "UWB HACKS 2026",
       year: "2026",
-      description: "An emotion-aware meal planning PWA that maps psychological states to nutritional profiles, using AI to provide science-backed meal recommendations for emotional regulation and cognitive performance.",
-      tags: ["React (PWA)", "FastAPI", "Claude API", "Supabase", "Spoonacular API", "Tailwind CSS"],
+      description: "An AI-powered software factory that turns a product spec into a populated kanban, runs seven specialist agents to deliver each ticket, and shows the reasoning behind every decision for full auditability.",
+      tags: ["TypeScript", "React", "Node.js", "Gemma 4", "PostgreSQL", "Tauri"],
+      image: "./images/the-manager.png",
+      github: "https://github.com/aditya-pandita/theManager",
+      live: "https://devpost.com/software/themanager",
+    },
+    {
+      title: "MoodMeals",
+      company: "Emotion-Aware Meal PWA",
+      year: "2026",
+      description: "Emotion-aware meal planning PWA for college students. Uses Google Gemini 2.0 and Spoonacular to map psychological states to nutritional profiles, featuring grocery tracking and Google Calendar sync.",
+      tags: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Gemini 2.0", "PWA"],
       image: "./images/mood-meals.png",
-      github: "https://github.com/vatsalp2008/MoodMeals",
+      github: "https://github.com/rohanjoshi1399/MoodMeals",
+      live: "https://mood-meals-rust.vercel.app",
     },
     {
       title: "F1 Race Predictions 2025",
@@ -60,13 +71,13 @@ export default function WorkSection() {
       github: "https://github.com/vatsalp2008",
     },
     {
-      title: "F1 Race Replay",
+      title: "F1 Analytics Dashboard",
       company: "Personal Project",
       year: "2025",
-      description: "Interactive F1 race telemetry visualization with live driver tracking, leaderboard, and replay controls for race analysis.",
-      tags: ["Python", "FastF1", "Arcade", "Data Visualization", "Real-time Processing"],
-      image: "./images/preview.png",
-      github: "https://github.com/vatsalp2008/F1-Race-Replay",
+      description: "Full-stack F1 analytics platform with interactive dashboards for lap telemetry, driver comparisons, and race strategy analysis using the FastF1 API and real-time data pipelines.",
+      tags: ["Python", "FastF1", "React", "Data Visualization", "REST API"],
+      image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68fdae81f7836cad567112d4/299a839c1_ferrari_f1_2027-wallpaper-2880x1620.jpg",
+      github: "https://github.com/vatsalp2008/f1-analytics-dashboard",
     },
   ];
 
@@ -121,9 +132,9 @@ export default function WorkSection() {
                 </div>
 
                 {/* Browser Content - Clickable if GitHub link exists */}
-                {project.github ? (
+                {project.live || project.github ? (
                   <a
-                    href={project.github}
+                    href={project.live || project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block relative aspect-[16/10] overflow-hidden bg-[#0a0a0a] border border-gray-800 rounded-b-xl cursor-pointer"
@@ -162,9 +173,33 @@ export default function WorkSection() {
                     <h3 className="text-xl md:text-2xl font-bold mb-1 group-hover:text-[#DC0000] transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-gray-500">
-                      {project.company} · '{project.year.slice(-2)}
-                    </p>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">
+                      <p className="text-sm text-gray-400">
+                        {project.company} · '{project.year.slice(-2)}
+                      </p>
+                      <div className="flex gap-3">
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-gray-500 hover:text-[#DC0000] transition-colors"
+                          >
+                            GitHub ↗
+                          </a>
+                        )}
+                        {project.live && (
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-gray-500 hover:text-[#DC0000] transition-colors"
+                          >
+                            Live Demo ↗
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -185,32 +220,6 @@ export default function WorkSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-800 pt-12"
-        >
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-[#DC0000] mb-2">98.8%</div>
-            <div className="text-sm text-gray-500">ML Model Accuracy</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-[#DC0000] mb-2">85.7%</div>
-            <div className="text-sm text-gray-500">LLM Agent Accuracy</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-[#DC0000] mb-2">97%</div>
-            <div className="text-sm text-gray-500">Performance Improvement</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-[#DC0000] mb-2">7+</div>
-            <div className="text-sm text-gray-500">Major Projects</div>
-          </div>
-        </motion.div>
 
         {/* View More */}
         <motion.div

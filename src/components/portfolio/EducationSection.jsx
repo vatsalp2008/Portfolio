@@ -47,13 +47,6 @@ export default function EducationSection() {
     },
   ];
 
-  const certifications = [
-    "AWS Certified Solutions Architect",
-    "Google Cloud Professional Developer",
-    "Certified Kubernetes Administrator",
-    "MongoDB Certified Developer",
-  ];
-
   return (
     <section className="relative min-h-screen py-32 px-6">
       {/* Background Elements */}
@@ -163,37 +156,6 @@ export default function EducationSection() {
           ))}
         </div>
 
-        {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-br from-[#1a1a1a] to-[#121212] border border-[#DC0000]/20 rounded-sm p-8"
-        >
-          <h3 className="text-2xl font-black text-[#F5F5F5] mb-6 flex items-center gap-3">
-            <div className="p-2 bg-[#DC0000]/10 rounded-sm">
-              <Award className="w-6 h-6 text-[#DC0000]" />
-            </div>
-            Professional Certifications
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {certifications.map((cert, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-3 p-4 bg-[#121212] border border-[#DC0000]/10 rounded-sm hover:border-[#DC0000]/30 transition-colors duration-300"
-              >
-                <div className="w-2 h-2 bg-[#DC0000] rounded-full flex-shrink-0" />
-                <span className="text-[#A0A0A0] font-medium">{cert}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
