@@ -7,15 +7,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#DC0000',
-        'dark-red': '#B91C1C', // Darker red color
+        cream: '#F7F4EF',
+        terra: '#C4763A',
+        warm: '#E5E0D8',
       },
       fontFamily: {
-        'sans': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+        display: ['Fraunces', 'serif'],
+        sans: ['DM Sans', 'sans-serif'],
       },
       animation: {
-        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      }
+        marquee: 'marquee 32s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%':   { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
   plugins: [],
