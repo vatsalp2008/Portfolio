@@ -20,12 +20,6 @@ const links = [
     href: "https://github.com/vatsalp2008",
     external: true,
   },
-  {
-    label: "Portfolio",
-    value: "vatsalp2008.github.io/Portfolio",
-    href: "https://vatsalp2008.github.io/Portfolio",
-    external: true,
-  },
 ];
 
 export default function ContactSection() {

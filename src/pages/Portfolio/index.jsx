@@ -16,8 +16,8 @@ export default function Portfolio() {
           Vatsal Patel
         </a>
         <div className="flex items-center gap-8">
-          <a href="#work"  className="hidden md:block text-sm text-[#888888] hover:text-[#111111] transition-colors duration-200">Work</a>
           <a href="#about" className="hidden md:block text-sm text-[#888888] hover:text-[#111111] transition-colors duration-200">About</a>
+          <a href="#work"  className="hidden md:block text-sm text-[#888888] hover:text-[#111111] transition-colors duration-200">Work</a>
           <a
             href="https://drive.google.com/file/d/1mBT1K3wxfBn_RZnkIqd0VqjYTwd4sdsq/view?usp=share_link"
             target="_blank"
@@ -40,11 +40,6 @@ export default function Portfolio() {
       {/* ── MARQUEE ── */}
       <MarqueeSection />
 
-      {/* ── WORK ── */}
-      <div id="work">
-        <WorkSection />
-      </div>
-
       {/* ── ABOUT ── */}
       <div id="about">
         <AboutSection />
@@ -53,6 +48,11 @@ export default function Portfolio() {
       {/* ── SKILLS ── */}
       <div id="skills">
         <SkillsSection />
+      </div>
+
+      {/* ── WORK ── */}
+      <div id="work">
+        <WorkSection />
       </div>
 
       {/* ── CONTACT ── */}

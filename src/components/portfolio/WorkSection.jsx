@@ -81,12 +81,15 @@ export default function WorkSection() {
       </div>
 
       {/* Featured card */}
-      <motion.div
+      <motion.a
+        href={featured.github}
+        target="_blank"
+        rel="noopener noreferrer"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="bg-white border border-warm rounded-2xl grid md:grid-cols-2 overflow-hidden mb-3"
+        className="block bg-white border border-warm rounded-2xl grid md:grid-cols-2 overflow-hidden mb-3 hover:border-terra transition-colors duration-200"
       >
         {/* Left */}
         <div className="p-10 md:border-r border-warm flex flex-col">
@@ -128,13 +131,16 @@ export default function WorkSection() {
             </div>
           ))}
         </div>
-      </motion.div>
+      </motion.a>
 
       {/* Project grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {projects.map((p, i) => (
-          <motion.div
+          <motion.a
             key={p.title}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.07 }}
@@ -160,16 +166,11 @@ export default function WorkSection() {
                   </span>
                 ))}
               </div>
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-medium text-terra whitespace-nowrap hover:opacity-75 transition-opacity duration-200"
-              >
+              <span className="text-xs font-medium text-terra whitespace-nowrap">
                 View project ↗
-              </a>
+              </span>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </section>

@@ -26,9 +26,7 @@ export default function HeroSection() {
 
         {/* H1 */}
         <h1 className="font-display text-[clamp(42px,5.5vw,68px)] font-bold leading-[1.04] tracking-tight text-[#111111]">
-          Building{" "}
-          <em className="font-display not-italic italic font-light text-terra">thoughtful</em>
-          <br />software.
+          Building <em className="font-display not-italic italic font-light text-terra">thoughtful</em> software.
         </h1>
 
         {/* Body */}
