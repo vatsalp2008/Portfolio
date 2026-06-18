@@ -19,7 +19,7 @@ export default function Portfolio() {
           <a href="#about" className="hidden md:block text-sm text-[#888888] hover:text-[#111111] transition-colors duration-200">About</a>
           <a href="#work"  className="hidden md:block text-sm text-[#888888] hover:text-[#111111] transition-colors duration-200">Work</a>
           <a
-            href="https://drive.google.com/file/d/1mBT1K3wxfBn_RZnkIqd0VqjYTwd4sdsq/view?usp=share_link"
+            href="https://drive.google.com/file/d/1HMUy0-pIh4iWxtvq-ix01ytbb-camXF7/view?usp=share_link"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:block text-sm text-[#888888] hover:text-[#111111] transition-colors duration-200"
