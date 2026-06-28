@@ -29,7 +29,7 @@ const projects = [
     title: "MoodMeals",
     desc: "Hackathon-built meal recommender using LLM-driven mood inference and real-time dietary context. Deployed on Vercel.",
     pills: ["React", "FastAPI", "LLM"],
-    link: "https://mood-meals-rust.vercel.app",
+    link: "https://moodmeals-two.vercel.app",
   },
   {
     tag: "Agentic AI",
