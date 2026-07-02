@@ -43,7 +43,7 @@ export default function HeroSection() {
             View my work
           </a>
           <a
-            href="https://drive.google.com/file/d/1HMUy0-pIh4iWxtvq-ix01ytbb-camXF7/view?usp=share_link"
+            href="https://drive.google.com/file/d/1GIchTOz6qFaZNqdPULI8EB8jEt-9x6ec/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-warm text-[#111111] px-6 py-3 rounded-[30px] text-sm font-medium hover:border-terra transition-colors duration-200"
