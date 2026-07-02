@@ -78,7 +78,7 @@ export default function AboutSection() {
             <p>
               I'm an MS CS student at Northeastern University's Khoury College in Seattle,
               originally from Mumbai. My work sits at the intersection of systems, machine
-              learning, and product — I like building things that have both technical depth
+              learning, and product. I like building things that have both technical depth
               and clear utility.
             </p>
             <p>

@@ -31,7 +31,7 @@ export default function HeroSection() {
 
         {/* Body */}
         <p className="text-[15px] font-light text-[#888888] leading-[1.7] max-w-[420px]">
-          MS Computer Science at Northeastern, Seattle. I build full-stack systems, ML pipelines, and agentic AI — often inspired by Formula 1.
+          MS Computer Science at Northeastern, Seattle. I build full-stack systems, ML pipelines, and agentic AI, often inspired by Formula 1.
         </p>
 
         {/* Buttons */}
