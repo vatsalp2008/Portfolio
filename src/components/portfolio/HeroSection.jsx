@@ -1,4 +1,6 @@
 import React from "react";
+import SplitText from "../../reactbits/SplitText";
+import RotatingText from "../../reactbits/RotatingText";
 
 // Warm dust motes drifting upward — positions/timings spread out for organic feel.
 const motes = [
@@ -13,7 +15,7 @@ const motes = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-64px)] overflow-hidden flex flex-col items-center justify-center text-center px-6">
+    <section className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center text-center px-6">
 
       {/* ── ANIMATED BACKGROUND ── */}
       <div className="absolute inset-0 -z-0" aria-hidden="true">
@@ -87,20 +89,56 @@ export default function HeroSection() {
         </div>
 
         {/* eyebrow */}
-        <p
-          className="text-[12px] font-medium uppercase tracking-[0.35em] text-[#A98B6B] animate-rise-in"
+        <div
+          className="flex items-center justify-center text-[12px] font-medium uppercase tracking-[0.35em] text-[#A98B6B] animate-rise-in"
           style={{ animationDelay: "0.05s" }}
         >
-          MS Computer Science · Northeastern
-        </p>
+          <span>MS Computer Science ·&nbsp;</span>
+          <RotatingText
+            texts={["Northeastern", "Full-stack Eng", "ML & Data", "F1 Enthusiast"]}
+            rotationInterval={2400}
+            staggerDuration={0.015}
+            mainClassName="text-terra overflow-hidden"
+            splitLevelClassName="overflow-hidden"
+            transition={{ type: "spring", damping: 28, stiffness: 340 }}
+          />
+        </div>
 
         {/* giant name */}
         <h1
-          className="font-archivo font-extrabold leading-[0.95] tracking-[-0.02em] animate-rise-in"
-          style={{ fontSize: "clamp(64px, 13vw, 184px)", animationDelay: "0.12s" }}
+          className="font-archivo font-extrabold leading-[0.95] tracking-[-0.02em]"
+          style={{ fontSize: "clamp(64px, 13vw, 184px)" }}
         >
-          <span className="block text-terra">Vatsal</span>
-          <span className="block text-[#1A1A1A]">Patel</span>
+          <span className="block">
+            <SplitText
+              text="Vatsal"
+              tag="span"
+              className="text-terra"
+              splitType="chars"
+              delay={45}
+              duration={0.9}
+              ease="power3.out"
+              from={{ opacity: 0, y: 90 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.2}
+              rootMargin="0px"
+            />
+          </span>
+          <span className="block">
+            <SplitText
+              text="Patel"
+              tag="span"
+              className="text-[#1A1A1A]"
+              splitType="chars"
+              delay={45}
+              duration={0.9}
+              ease="power3.out"
+              from={{ opacity: 0, y: 90 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.2}
+              rootMargin="0px"
+            />
+          </span>
         </h1>
 
         {/* professional tagline */}

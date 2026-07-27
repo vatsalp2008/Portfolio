@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import CountUp from "../../reactbits/CountUp";
+import SpotlightCard from "../../reactbits/SpotlightCard";
 
 const featured = {
   tag: "ML · Data Engineering · F1",
@@ -9,10 +11,10 @@ const featured = {
   tech: ["XGBoost", "TensorFlow", "Spark", "D3.js", "FastF1", "React"],
   github: "https://github.com/vatsalp2008/f1-analytics-dashboard",
   metrics: [
-    { number: "73%",   label: "Podium prediction accuracy" },
-    { number: "3.2s",  label: "Mean absolute lap error" },
-    { number: "500K+", label: "Rows processed" },
-    { number: "70+",   label: "Engineered features" },
+    { value: 73,  suffix: "%",  label: "Podium prediction accuracy" },
+    { value: 3.2, suffix: "s",  label: "Mean absolute lap error" },
+    { value: 500, suffix: "K+", label: "Rows processed" },
+    { value: 70,  suffix: "+",  label: "Engineered features" },
   ],
 };
 
@@ -62,8 +64,6 @@ const projects = [
 ];
 
 export default function WorkSection() {
-  const [hovered, setHovered] = useState(null);
-
   return (
     <section className="px-6 md:px-[52px] py-[72px] bg-cream">
 
@@ -107,14 +107,9 @@ export default function WorkSection() {
               </span>
             ))}
           </div>
-          <a
-            href={featured.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-[#111111] underline underline-offset-[3px] hover:text-terra transition-colors duration-200 w-fit"
-          >
+          <span className="text-sm font-medium text-[#111111] underline underline-offset-[3px] w-fit">
             View project ↗
-          </a>
+          </span>
         </div>
 
         {/* Right — metrics 2×2 */}
@@ -125,7 +120,8 @@ export default function WorkSection() {
           {featured.metrics.map((m) => (
             <div key={m.label} className="bg-white p-7 flex flex-col justify-center">
               <div className="font-display text-[38px] font-bold text-terra leading-none tracking-tight mb-2">
-                {m.number}
+                <CountUp to={m.value} duration={1.8} />
+                {m.suffix}
               </div>
               <div className="text-xs font-light text-[#888888] leading-[1.45]">{m.label}</div>
             </div>
@@ -145,31 +141,30 @@ export default function WorkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.07 }}
             viewport={{ once: true }}
-            onMouseEnter={() => setHovered(i)}
-            onMouseLeave={() => setHovered(null)}
-            className={`bg-white border rounded-2xl p-7 flex flex-col gap-[10px] transition-all duration-200 ${
-              hovered === i
-                ? "border-terra shadow-[0_4px_20px_rgba(0,0,0,0.07)]"
-                : "border-warm"
-            }`}
+            className="block h-full"
           >
-            <p className="text-[10px] font-medium uppercase tracking-[0.09em] text-terra">{p.tag}</p>
-            <h3 className="font-display text-[19px] font-bold text-[#111111] leading-[1.2] tracking-tight">
-              {p.title}
-            </h3>
-            <p className="text-[13px] font-light text-[#999999] leading-[1.65] flex-1">{p.desc}</p>
-            <div className="border-t border-[#F0EBE3] pt-[14px] mt-1 flex items-center justify-between flex-wrap gap-2">
-              <div className="flex flex-wrap gap-[6px]">
-                {p.pills.map((pill) => (
-                  <span key={pill} className="text-[11px] text-[#888888] bg-cream border border-warm rounded-[30px] px-[10px] py-[3px]">
-                    {pill}
-                  </span>
-                ))}
+            <SpotlightCard
+              className="h-full flex flex-col gap-[10px] transition-shadow duration-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)]"
+              spotlightColor="rgba(196, 118, 58, 0.16)"
+            >
+              <p className="text-[10px] font-medium uppercase tracking-[0.09em] text-terra">{p.tag}</p>
+              <h3 className="font-display text-[19px] font-bold text-[#111111] leading-[1.2] tracking-tight">
+                {p.title}
+              </h3>
+              <p className="text-[13px] font-light text-[#999999] leading-[1.65] flex-1">{p.desc}</p>
+              <div className="border-t border-[#F0EBE3] pt-[14px] mt-1 flex items-center justify-between flex-wrap gap-2">
+                <div className="flex flex-wrap gap-[6px]">
+                  {p.pills.map((pill) => (
+                    <span key={pill} className="text-[11px] text-[#888888] bg-cream border border-warm rounded-[30px] px-[10px] py-[3px]">
+                      {pill}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-xs font-medium text-terra whitespace-nowrap">
+                  View project ↗
+                </span>
               </div>
-              <span className="text-xs font-medium text-terra whitespace-nowrap">
-                View project ↗
-              </span>
-            </div>
+            </SpotlightCard>
           </motion.a>
         ))}
       </div>

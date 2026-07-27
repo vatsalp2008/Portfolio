@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import GlareHover from "../../reactbits/GlareHover";
 
 const links = [
   {
@@ -57,15 +58,29 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
               viewport={{ once: true }}
-              className="group bg-white border border-warm rounded-xl px-5 py-4 flex items-center justify-between gap-4 hover:border-terra transition-colors duration-200"
+              className="block"
             >
-              <span className="text-[14px] font-medium text-[#111111] min-w-[80px]">
-                {link.label}
-              </span>
-              <span className="text-[13px] text-[#BBBBBB] flex-1 text-center hidden sm:block">
-                {link.value}
-              </span>
-              <span className="text-terra text-[15px] flex-shrink-0">↗</span>
+              <GlareHover
+                width="100%"
+                height="auto"
+                background="#ffffff"
+                borderColor="#E5E0D8"
+                borderRadius="12px"
+                glareColor="#C4763A"
+                glareOpacity={0.28}
+                glareAngle={-40}
+                glareSize={280}
+              >
+                <div className="flex items-center justify-between gap-4 w-full px-5 py-4">
+                  <span className="text-[14px] font-medium text-[#111111] min-w-[80px]">
+                    {link.label}
+                  </span>
+                  <span className="text-[13px] text-[#BBBBBB] flex-1 text-center hidden sm:block">
+                    {link.value}
+                  </span>
+                  <span className="text-terra text-[15px] flex-shrink-0">↗</span>
+                </div>
+              </GlareHover>
             </motion.a>
           ))}
         </div>

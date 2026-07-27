@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SpotlightCard from "../../reactbits/SpotlightCard";
 
 const skillCards = [
   {
@@ -34,19 +35,21 @@ export default function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
             viewport={{ once: true }}
-            className="bg-white border border-warm rounded-2xl p-6"
+            className="h-full"
           >
-            <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-terra mb-[18px]">
-              {card.title}
-            </p>
-            <div className="flex flex-col gap-[11px]">
-              {card.items.map((item) => (
-                <div key={item} className="flex items-center gap-[9px] text-[13px] font-light text-[#444444]">
-                  <span className="w-1 h-1 rounded-full bg-terra flex-shrink-0" />
-                  {item}
-                </div>
-              ))}
-            </div>
+            <SpotlightCard className="h-full" spotlightColor="rgba(196, 118, 58, 0.18)">
+              <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-terra mb-[18px]">
+                {card.title}
+              </p>
+              <div className="flex flex-col gap-[11px]">
+                {card.items.map((item) => (
+                  <div key={item} className="flex items-center gap-[9px] text-[13px] font-light text-[#444444]">
+                    <span className="w-1 h-1 rounded-full bg-terra flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </SpotlightCard>
           </motion.div>
         ))}
       </div>

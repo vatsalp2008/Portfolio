@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollReveal from "../../reactbits/ScrollReveal";
 
 const industry = [
   {
@@ -70,10 +71,15 @@ export default function AboutSection() {
           <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-[#AAAAAA] mb-4">
             About me
           </p>
-          <h2 className="font-display text-[40px] font-bold text-[#111111] leading-[1.15] tracking-tight mb-7">
-            Engineer by training,<br />
-            <em className="font-display italic font-light text-terra">curious</em> by nature.
-          </h2>
+          <ScrollReveal
+            containerClassName="!my-0 mb-7"
+            textClassName="font-display font-bold text-[#111111] tracking-tight"
+            baseOpacity={0.12}
+            baseRotation={2}
+            blurStrength={5}
+          >
+            Engineer by training, curious by nature.
+          </ScrollReveal>
           <div className="text-[14px] font-light text-[#666666] leading-[1.85] space-y-[18px]">
             <p>
               I'm an MS CS student at Northeastern University's Khoury College in Seattle,

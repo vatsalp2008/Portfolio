@@ -1,174 +1,83 @@
-# 🏎️ Vatsal Patel - Portfolio Website
+# Vatsal Patel — Portfolio
 
-> **"Tuning software like an F1 pit crew — faster, leaner, smarter."**
+> _"Building thoughtful software — from full-stack systems and ML pipelines to agentic AI, often inspired by Formula 1."_
 
-A high-performance portfolio website inspired by Formula 1 racing, showcasing my journey as a Computer Science graduate student at Northeastern University.
+A warm, editorial-minimalist portfolio for **Vatsal Patel**, MS Computer Science at Northeastern University (Seattle). Cream-and-terracotta palette, serif/sans type pairing, and tasteful motion throughout.
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
-![React](https://img.shields.io/badge/React-18.3-61dafb?style=for-the-badge&logo=react)
-![Vite](https://img.shields.io/badge/Vite-5.4-646cff?style=for-the-badge&logo=vite)
-![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
+**Live:** https://vatsalp2008.github.io/Portfolio
 
-## ✨ Features
+![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-7-646cff?style=for-the-badge&logo=vite)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwindcss)
 
-### 🎨 Design
-- **F1-Inspired Theme**: Ferrari red (#DC0000) accent colors with racing-inspired animations
-- **Dark Mode**: Sleek black (#0a0a0a) background for a premium feel
-- **Responsive Design**: Seamlessly adapts to all screen sizes
-- **Smooth Animations**: Framer Motion powered transitions and effects
+## Design
 
-### 📑 Sections
-- **Hero**: Dynamic landing with F1-themed tagline
-- **Work**: Featured projects displayed in Safari browser mockups
-- **Skills**: Interactive category tabs with 100+ technical skills
-- **Experience**: Timeline view of professional journey
-- **Education**: Academic credentials and certifications
-- **About**: Personal story with stats and achievements
-- **Contact**: Integrated contact form with social links
+- **Editorial warm minimalist** — cream `#F7F4EF`, terracotta `#C4763A`, warm border `#E5E0D8`
+- **Type** — Fraunces (serif display), DM Sans (body), Poppins (hero name)
+- **Animated hero** — a light dawn scene: pulsing sun glow, drifting warm orbs, floating dust motes, and softly animated rolling hills
+- **Motion** — Framer Motion scroll reveals + GSAP-powered effects via [React Bits](https://reactbits.dev)
 
-## 🛠️ Tech Stack
+## Sections
 
-### Frontend
-- **React 18.3** - UI Library
-- **Vite 5.4** - Build tool
-- **Tailwind CSS 3.4** - Styling
-- **Framer Motion 11.0** - Animations
-- **Lucide React** - Icons
+- **Hero** — giant animated name with a rotating tagline and scroll cue
+- **Marquee** — looping strip of technologies
+- **About** — bio + a two-group experience timeline (Industry / Academia & Volunteering)
+- **Skills** — Languages, ML/Data, Frameworks, Tools & Infra
+- **Work** — featured F1 Analytics Dashboard with animated metrics, plus a grid of six projects
+- **Contact** — email, LinkedIn, GitHub
 
-### Development
-- **JavaScript ES6+**
-- **CSS3 with custom animations**
-- **Responsive Grid & Flexbox layouts**
+## Tech Stack
 
-## 🏁 Quick Start
+- **React 19** + **Vite 7**
+- **Tailwind CSS 3.4** with custom tokens (`cream`, `terra`, `warm`)
+- **Framer Motion 12** — scroll-triggered animations
+- **GSAP** + **@gsap/react** — SplitText, ScrollReveal, PillNav effects
+- **React Bits** components (in `src/reactbits/`): PillNav, SplitText, RotatingText, LogoLoop, ScrollReveal, SpotlightCard, CountUp, GlareHover, ShinyText
 
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/vatsalp2008/portfolio-website.git
-   cd portfolio-website
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open browser**
-   ```
-   http://localhost:5173
-   ```
-
-### Build for Production
+## Quick Start
 
 ```bash
-npm run build
-# or
-yarn build
+npm install       # install dependencies
+npm run dev       # start dev server → http://localhost:5173/Portfolio/
+npm run build     # production build to dist/
+npm run deploy    # build + publish to the gh-pages branch
 ```
 
-The optimized files will be in the `dist/` directory.
+> **Deployment note:** GitHub Pages serves from the **`gh-pages`** branch, not `main`. Changes go live only after `npm run deploy` — pushing to `main` alone does not update the site.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio/
 ├── src/
-│   ├── pages/
-│   │   └── portfolio/
-│   │       └── index.jsx          # Main portfolio page
-│   ├── components/
-│   │   └── portfolio/
-│   │       ├── HeroSection.jsx    # Landing section
-│   │       ├── WorkSection.jsx    # Featured projects
-│   │       ├── SkillsSection.jsx  # Technical skills
-│   │       ├── ExperienceSection.jsx
-│   │       ├── AboutSection.jsx
-│   │       ├── EducationSection.jsx
-│   │       └── ContactSection.jsx
-│   ├── App.jsx
+│   ├── pages/Portfolio/index.jsx       # page shell: nav, section order, footer
+│   ├── components/portfolio/
+│   │   ├── HeroSection.jsx             # animated hero + name
+│   │   ├── MarqueeSection.jsx          # LogoLoop tech strip
+│   │   ├── AboutSection.jsx            # bio + experience timeline
+│   │   ├── SkillsSection.jsx           # skill cards
+│   │   ├── WorkSection.jsx             # featured + project grid
+│   │   └── ContactSection.jsx          # contact links
+│   ├── reactbits/                      # React Bits components (adapted to theme)
+│   ├── index.css                       # fonts, tokens, globals
 │   └── main.jsx
-├── public/
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
+├── tailwind.config.js                  # palette + keyframes
+├── vite.config.js                      # base: '/Portfolio/'
 └── README.md
 ```
 
-## 🎯 Key Features Breakdown
-
-### 🏆 Featured Projects
-- **F1 Race Predictions 2025** - ML model with 85% accuracy
-- **Seattle Transit Pathfinding** - A* algorithm implementation
-- **Knightmare Chess AI** - 70% win rate engine
-- **Investment Prediction Platform** - 98.8% accuracy ML system
-
-### 💻 Skills Categories
-- Programming Languages (Python, Java, JavaScript, C++, etc.)
-- Web Development (React, Node.js, Angular, etc.)
-- Databases (MySQL, PostgreSQL, MongoDB, etc.)
-- AI/ML & Data Science (TensorFlow, PyTorch, Scikit-learn, etc.)
-- Cloud & DevOps (AWS, Docker, Kubernetes, etc.)
-- Frameworks & Tools (Spring Boot, Flask, Django, etc.)
-
-## 🚧 Deployment
-
-### Deploy to Vercel
-```bash
-npm install -g vercel
-vercel
-```
-
-### Deploy to Netlify
-```bash
-# Build the project
-npm run build
-
-# Drag and drop the dist folder to Netlify
-```
-
-## 📈 Performance
-
-- ⚡ Lighthouse Score: 95+
-- 🎨 First Contentful Paint: < 1.2s
-- 📱 Mobile Responsive: 100%
-- ♿ Accessibility: WCAG 2.1 AA compliant
-
-## 🤝 Connect
+## Connect
 
 - **LinkedIn**: [vatsalp20](https://linkedin.com/in/vatsalp20)
 - **GitHub**: [vatsalp2008](https://github.com/vatsalp2008)
 - **Email**: vatsalp2008@gmail.com
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by Formula 1 and the precision of motorsport engineering
-- Built with passion for clean code and elegant design
-- Special thanks to the open-source community
+MIT — see [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
-  <p>Made with ❤️ and ☕ by Vatsal Patel</p>
-  <p>
-    <a href="https://base44.app">🏁 View Live Portfolio</a>
-  </p>
+  <p>Built with precision by Vatsal Patel</p>
 </div>
