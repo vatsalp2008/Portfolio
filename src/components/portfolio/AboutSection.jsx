@@ -15,20 +15,24 @@ const industry = [
   },
 ];
 
-// Multi-role entries use `roles` array; single entries use `role` string.
 const other = [
   {
-    role: "Teaching Assistant, CS 5008",
-    company: "Northeastern University",
-    date: "Jan – May 2026",
-  },
-  {
     role: "Event Assistant",
-    company: "Northeastern University", // ← update if this is a different org
+    company: "Northeastern University, Seattle Campus",
     date: "May 2026 – present",
   },
   {
-    role: "Head Coordinator / AV Specialist",
+    role: "Student Proctor",
+    company: "Northeastern University, College of Professional Studies",
+    date: "Apr – Jun 2026",
+  },
+  {
+    role: "Graduate Teaching Assistant, CS 5008",
+    company: "Khoury College, Northeastern University",
+    date: "Jan – May 2026",
+  },
+  {
+    role: "Head Coordinator & Audio Manager",
     company: "BAPS Charities",
     date: "Jan 2018 – present",
   },
@@ -85,13 +89,15 @@ export default function AboutSection() {
               I'm an MS CS student at Northeastern University's Khoury College in Seattle,
               originally from Mumbai. My work sits at the intersection of systems, machine
               learning, and product. I like building things that have both technical depth
-              and clear utility.
+              and clear utility. This fall I'm building a cross-border trade and tariff
+              explorer for PNWER, a U.S.–Canada nonprofit, and contributing to open source,
+              with fixes merged into Chef Infra and Spice.ai.
             </p>
             <p>
               Outside code, I follow Formula 1 obsessively, which has shaped how I think
               about optimization, telemetry data, and building under constraints. I also
-              volunteer at BAPS Charities, where I've served as Head Coordinator and AV
-              Specialist since 2018.
+              volunteer at BAPS Charities, where I've served as Head Coordinator and Audio
+              Manager since 2018.
             </p>
           </div>
         </div>

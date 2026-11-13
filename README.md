@@ -22,8 +22,8 @@ A warm, editorial-minimalist portfolio for **Vatsal Patel**, MS Computer Science
 - **Hero** — giant animated name with a rotating tagline and scroll cue
 - **Marquee** — looping strip of technologies
 - **About** — bio + a two-group experience timeline (Industry / Academia & Volunteering)
-- **Skills** — Languages, ML/Data, Frameworks, Tools & Infra
-- **Work** — featured F1 Analytics Dashboard with animated metrics, plus a grid of six projects
+- **Skills** — Languages, ML/AI, Frameworks, Data & Infra
+- **Work** — featured F1 Analytics Dashboard with animated metrics, an Open source strip (merged chef/chef and Spice.ai PRs), and a curated project grid led by the PNWER Trade & Tariffs client project, with a Show all toggle
 - **Contact** — email, LinkedIn, GitHub
 
 ## Tech Stack
@@ -56,8 +56,9 @@ portfolio/
 │   │   ├── MarqueeSection.jsx          # LogoLoop tech strip
 │   │   ├── AboutSection.jsx            # bio + experience timeline
 │   │   ├── SkillsSection.jsx           # skill cards
-│   │   ├── WorkSection.jsx             # featured + project grid
+│   │   ├── WorkSection.jsx             # featured + open source + project grid
 │   │   └── ContactSection.jsx          # contact links
+│   ├── data/projects.js                # featured, open source, and grid project data
 │   ├── reactbits/                      # React Bits components (adapted to theme)
 │   ├── index.css                       # fonts, tokens, globals
 │   └── main.jsx

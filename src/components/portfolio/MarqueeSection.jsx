@@ -2,8 +2,8 @@ import React from "react";
 import LogoLoop from "../../reactbits/LogoLoop";
 
 const ITEMS = [
-  "Python", "TypeScript", "React", "FastAPI", "XGBoost",
-  "PostgreSQL", "Docker", "TensorFlow", "Rust", "Apache Spark", "AWS", "MCP",
+  "Python", "TypeScript", "Java", "Rust", "Go", "Swift", "React", "PyTorch",
+  "Kafka", "Apache Flink", "Spring Boot", "PostgreSQL", "Docker", "Kubernetes", "AWS", "MCP",
 ];
 
 const logos = ITEMS.map((item) => ({
@@ -17,7 +17,7 @@ const logos = ITEMS.map((item) => ({
 
 export default function MarqueeSection() {
   return (
-    <div className="bg-white border-y border-warm py-[18px]">
+    <div className="bg-white border-y border-warm py-[18px] overflow-hidden">
       <LogoLoop
         logos={logos}
         speed={55}

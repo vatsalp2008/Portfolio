@@ -85,7 +85,7 @@ export default function HeroSection() {
         {/* availability badge */}
         <div className="inline-flex items-center gap-[9px] bg-white/70 backdrop-blur border border-warm rounded-[30px] px-4 py-[7px] w-fit text-[13px] text-[#444444] animate-rise-in">
           <span className="w-2 h-2 rounded-full bg-[#4CAF50] flex-shrink-0" />
-          Open to Fall 2026 internships
+          Open to Spring 2027 co-ops
         </div>
 
         {/* eyebrow */}
@@ -95,7 +95,7 @@ export default function HeroSection() {
         >
           <span>MS Computer Science ·&nbsp;</span>
           <RotatingText
-            texts={["Northeastern", "Full-stack Eng", "ML & Data", "F1 Enthusiast"]}
+            texts={["Northeastern", "Full-stack Eng", "ML & Data", "Open Source", "F1 Enthusiast"]}
             rotationInterval={2400}
             staggerDuration={0.015}
             mainClassName="text-terra overflow-hidden"

@@ -1,69 +1,21 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import CountUp from "../../reactbits/CountUp";
 import SpotlightCard from "../../reactbits/SpotlightCard";
+import { featured, openSource, projects } from "../../data/projects";
 
-const featured = {
-  tag: "ML · Data Engineering · F1",
-  title: "F1 Analytics Dashboard",
-  description:
-    "End-to-end race prediction and telemetry platform processing 500K+ rows across 70+ engineered features. Combines XGBoost, TensorFlow, and real-time lap data into an interactive race replay.",
-  tech: ["XGBoost", "TensorFlow", "Spark", "D3.js", "FastF1", "React"],
-  github: "https://github.com/vatsalp2008/f1-analytics-dashboard",
-  metrics: [
-    { value: 73,  suffix: "%",  label: "Podium prediction accuracy" },
-    { value: 3.2, suffix: "s",  label: "Mean absolute lap error" },
-    { value: 500, suffix: "K+", label: "Rows processed" },
-    { value: 70,  suffix: "+",  label: "Engineered features" },
-  ],
-};
-
-const projects = [
-  {
-    tag: "Distributed Systems",
-    title: "StreamLine",
-    desc: "High-performance messaging system with real-time WebSocket communication, async JPA persistence, and thread-safe concurrent ops. Includes p99 latency testing and 50-message history replay.",
-    pills: ["Java 21", "Spring Boot", "WebSocket"],
-    link: "https://github.com/vatsalp2008/StreamLine-Distributed-Messaging-Engine",
-  },
-  {
-    tag: "AI · LLM · Full-stack",
-    title: "MoodMeals",
-    desc: "Hackathon-built meal recommender using LLM-driven mood inference and real-time dietary context. Deployed on Vercel.",
-    pills: ["React", "FastAPI", "LLM"],
-    link: "https://moodmeals-two.vercel.app",
-  },
-  {
-    tag: "Agentic AI",
-    title: "theManager",
-    desc: "MCP-powered desktop productivity agent with context-aware task orchestration built with Tauri and PostgreSQL.",
-    pills: ["TypeScript", "Tauri", "MCP"],
-    link: "https://github.com/aditya-pandita/theManager",
-  },
-  {
-    tag: "ML · Classification",
-    title: "Traffic Accident Severity",
-    desc: "Binary classification pipeline on 7.7M records using XGBoost, LightGBM, SHAP explainability, and SMOTE balancing.",
-    pills: ["XGBoost", "SHAP", "SMOTE"],
-    link: "https://github.com/vatsalp2008/Accidents-Severity",
-  },
-  {
-    tag: "Microservices",
-    title: "E-commerce Platform",
-    desc: "8-service event-driven platform with choreography-based Sagas, Transactional Outbox, Kafka streaming, and database-per-service isolation. Prometheus + Grafana observability included.",
-    pills: ["Java", "Kafka", "Docker"],
-    link: "https://github.com/vatsalp2008/E-commerce-Platform",
-  },
-  {
-    tag: "iOS · Native App",
-    title: "Wardrobe",
-    desc: "Native iOS wardrobe manager using SwiftUI and Core ML for on-device clothing recognition via the Vision framework, with WeatherKit-powered outfit suggestions.",
-    pills: ["Swift", "SwiftUI", "Core ML"],
-    link: "https://github.com/vatsalp2008/Wardrobe",
-  },
-];
+const INITIAL_COUNT = 9;
 
 export default function WorkSection() {
+  const [showAll, setShowAll] = useState(false);
+  const gridRef = useRef(null);
+  const visible = showAll ? projects : projects.slice(0, INITIAL_COUNT);
+
+  const toggleShowAll = () => {
+    if (showAll) gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setShowAll(!showAll);
+  };
+
   return (
     <section className="px-6 md:px-[52px] py-[72px] bg-cream">
 
@@ -129,9 +81,51 @@ export default function WorkSection() {
         </div>
       </motion.a>
 
+      {/* Open source */}
+      <p className="font-display italic text-[13px] text-[#AAAAAA] mt-12 mb-4">Open source</p>
+      <div className="grid md:grid-cols-2 gap-3 mb-12">
+        {openSource.map((c, i) => (
+          <motion.a
+            key={c.repo}
+            href={c.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.07 }}
+            viewport={{ once: true }}
+            className="bg-white border border-warm rounded-2xl p-8 flex flex-col hover:border-terra transition-colors duration-200"
+          >
+            <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+              <p className="text-[11px] font-medium uppercase tracking-[0.09em] text-terra">
+                {c.repo} · {c.meta}
+              </p>
+              <span className="inline-flex items-center gap-[7px] border border-warm rounded-[30px] px-3 py-[3px] text-[11px] text-[#444444]">
+                <span className="w-[6px] h-[6px] rounded-full bg-[#4CAF50] flex-shrink-0" />
+                Merged
+              </span>
+            </div>
+            <h3 className="font-display text-[21px] font-bold text-[#111111] leading-[1.2] tracking-tight mb-3">
+              {c.title}
+            </h3>
+            <p className="text-[13px] font-light text-[#666666] leading-[1.7] mb-5 flex-1">{c.desc}</p>
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div className="flex flex-wrap gap-[6px]">
+                {c.facts.map((f) => (
+                  <span key={f} className="text-[11px] text-[#888888] bg-cream border border-warm rounded-[30px] px-[10px] py-[3px]">
+                    {f}
+                  </span>
+                ))}
+              </div>
+              <span className="text-xs font-medium text-terra whitespace-nowrap">View PR ↗</span>
+            </div>
+          </motion.a>
+        ))}
+      </div>
+
       {/* Project grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {projects.map((p, i) => (
+      <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 scroll-mt-24">
+        {visible.map((p, i) => (
           <motion.a
             key={p.title}
             href={p.link}
@@ -139,7 +133,7 @@ export default function WorkSection() {
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.07 }}
+            transition={{ duration: 0.5, delay: Math.min(i % INITIAL_COUNT, 5) * 0.07 }}
             viewport={{ once: true }}
             className="block h-full"
           >
@@ -147,7 +141,14 @@ export default function WorkSection() {
               className="h-full flex flex-col gap-[10px] transition-shadow duration-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)]"
               spotlightColor="rgba(196, 118, 58, 0.16)"
             >
-              <p className="text-[10px] font-medium uppercase tracking-[0.09em] text-terra">{p.tag}</p>
+              <div className="flex items-center gap-2 flex-wrap">
+                <p className="text-[10px] font-medium uppercase tracking-[0.09em] text-terra">{p.tag}</p>
+                {p.status && (
+                  <span className="text-[10px] text-[#888888] border border-warm rounded-[30px] px-2 py-[1px]">
+                    {p.status}
+                  </span>
+                )}
+              </div>
               <h3 className="font-display text-[19px] font-bold text-[#111111] leading-[1.2] tracking-tight">
                 {p.title}
               </h3>
@@ -161,13 +162,27 @@ export default function WorkSection() {
                   ))}
                 </div>
                 <span className="text-xs font-medium text-terra whitespace-nowrap">
-                  View project ↗
+                  {p.linkLabel ?? "View project"} ↗
                 </span>
               </div>
             </SpotlightCard>
           </motion.a>
         ))}
       </div>
+
+      {/* Show all toggle */}
+      {projects.length > INITIAL_COUNT && (
+        <div className="flex justify-center mt-8">
+          <button
+            type="button"
+            onClick={toggleShowAll}
+            aria-expanded={showAll}
+            className="bg-white border border-warm text-[#111111] px-7 py-3 rounded-[30px] text-sm font-medium hover:border-terra transition-colors duration-200"
+          >
+            {showAll ? "Show fewer" : `Show all ${projects.length} projects`}
+          </button>
+        </div>
+      )}
     </section>
   );
 }

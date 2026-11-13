@@ -41,7 +41,7 @@ export default function ContactSection() {
             <em className="font-display italic font-light text-terra">great.</em>
           </h2>
           <p className="text-[14px] font-light text-[#999999] leading-[1.75] max-w-[380px]">
-            I'm actively looking for Fall 2026 internships in SWE, ML, and AI. Always happy
+            I'm actively looking for Spring 2027 co-ops in SWE, ML, and AI. Always happy
             to talk about F1, distributed systems, or good coffee.
           </p>
         </div>

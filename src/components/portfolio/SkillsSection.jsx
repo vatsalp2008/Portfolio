@@ -5,19 +5,19 @@ import SpotlightCard from "../../reactbits/SpotlightCard";
 const skillCards = [
   {
     title: "Languages",
-    items: ["Python", "TypeScript / JavaScript", "C / C++", "Rust", "SQL", "Java"],
+    items: ["Python", "TypeScript / JavaScript", "Java", "C / C++", "Rust", "Go", "Ruby", "Swift", "Kotlin", "SQL"],
   },
   {
-    title: "ML / Data",
-    items: ["XGBoost", "LightGBM", "TensorFlow", "PyTorch", "Scikit-learn", "Apache Spark", "SHAP", "Pandas"],
+    title: "ML / AI",
+    items: ["PyTorch", "TensorFlow", "XGBoost", "Scikit-learn", "SHAP", "LangGraph / LangChain", "TensorRT / ONNX", "Core ML", "MCP"],
   },
   {
     title: "Frameworks",
-    items: ["React", "Next.js", "FastAPI", "Flask", "Node.js", "Express", "Tauri", "D3.js"],
+    items: ["React", "Next.js", "Spring Boot", "FastAPI", "Flask", "Node.js", "SwiftUI", "Jetpack Compose", "Three.js", "D3.js"],
   },
   {
-    title: "Tools & Infra",
-    items: ["Docker", "Kubernetes", "PostgreSQL", "Redis", "AWS", "GCP", "Git", "GitHub Actions", "MCP"],
+    title: "Data & Infra",
+    items: ["Kafka", "Apache Flink", "Apache Spark", "dbt", "PostgreSQL", "Redis", "Docker", "Kubernetes", "Terraform", "AWS / GCP"],
   },
 ];
 
