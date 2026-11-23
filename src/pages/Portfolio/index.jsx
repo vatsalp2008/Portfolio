@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroSection from "../../components/portfolio/HeroSection";
 import MarqueeSection from "../../components/portfolio/MarqueeSection";
 import WorkSection from "../../components/portfolio/WorkSection";
@@ -24,21 +24,77 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
+const SECTION_IDS = navItems
+  .filter((item) => item.href.startsWith("#"))
+  .map((item) => item.href.slice(1));
+
+// Scroll-spy: the active section is the last one whose top has crossed 40% of
+// the viewport. At the very bottom the last section wins, since Contact is too
+// short to ever reach that line.
+function useActiveSection(ids) {
+  const [active, setActive] = useState(ids[0]);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const root = document.documentElement;
+      const atBottom = window.innerHeight + window.scrollY >= root.scrollHeight - 2;
+      let current = ids[0];
+
+      if (atBottom) {
+        current = ids[ids.length - 1];
+      } else {
+        const line = window.innerHeight * 0.4;
+        for (const id of ids) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= line) current = id;
+        }
+      }
+      setActive(current);
+    };
+
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, [ids]);
+
+  return active;
+}
+
+// Kept separate so scroll updates re-render only the nav, not the page.
+function Nav() {
+  const active = useActiveSection(SECTION_IDS);
+  return (
+    <PillNav
+      logo={logo}
+      logoAlt="Vatsal Patel"
+      items={navItems}
+      activeHref={`#${active}`}
+      baseColor="#FFFFFF"
+      pillColor="transparent"
+      pillTextColor="#111111"
+      hoveredPillTextColor="#F7F4EF"
+    />
+  );
+}
+
 export default function Portfolio() {
   return (
     <div className="bg-cream text-[#111111] min-h-screen">
 
       {/* ── NAV ── */}
-      <PillNav
-        logo={logo}
-        logoAlt="Vatsal Patel"
-        items={navItems}
-        activeHref="#hero"
-        baseColor="#FFFFFF"
-        pillColor="transparent"
-        pillTextColor="#111111"
-        hoveredPillTextColor="#F7F4EF"
-      />
+      <Nav />
 
       {/* ── HERO ── */}
       <div id="hero">
