@@ -119,22 +119,21 @@ export default function Portfolio() {
         <WorkSection />
       </div>
 
-      {/* ── CONTACT ── */}
-      <div id="contact">
+      {/* ── CONTACT + FOOTER (together they fill the last screen) ── */}
+      <div id="contact" className="min-h-[100svh] flex flex-col">
         <ContactSection />
-      </div>
 
-      {/* ── FOOTER ── */}
-      <footer className="bg-cream border-t border-warm px-6 md:px-[52px] py-6 flex items-center justify-between">
-        <span className="text-xs text-[#CCCCCC]">© 2026 Vatsal Patel</span>
-        <ShinyText
-          text="Built with precision."
-          speed={4}
-          color="#CCCCCC"
-          shineColor="#C4763A"
-          className="font-display italic text-sm"
-        />
-      </footer>
+        <footer className="bg-cream border-t border-warm px-6 md:px-[52px] py-6 flex items-center justify-between">
+          <span className="text-xs text-[#CCCCCC]">© 2026 Vatsal Patel</span>
+          <ShinyText
+            text="Built with precision."
+            speed={4}
+            color="#CCCCCC"
+            shineColor="#C4763A"
+            className="font-display italic text-sm"
+          />
+        </footer>
+      </div>
 
     </div>
   );

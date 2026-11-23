@@ -61,7 +61,7 @@ function SingleRow({ role, company, date, isLast, index }) {
 
 export default function AboutSection() {
   return (
-    <section className="bg-white px-6 md:px-[52px] py-[72px]">
+    <section className="bg-white px-6 md:px-[52px] min-h-[100svh] flex flex-col justify-center pt-[120px] pb-[72px]">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

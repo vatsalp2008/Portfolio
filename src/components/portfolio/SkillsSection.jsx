@@ -23,7 +23,7 @@ const skillCards = [
 
 export default function SkillsSection() {
   return (
-    <section className="bg-cream px-6 md:px-[52px] py-[72px]">
+    <section className="bg-cream px-6 md:px-[52px] min-h-[100svh] flex flex-col justify-center pt-[120px] pb-[72px]">
 
       <p className="font-display italic text-[13px] text-[#AAAAAA] mb-7">Skills &amp; tools</p>
 

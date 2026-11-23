@@ -25,7 +25,7 @@ const links = [
 
 export default function ContactSection() {
   return (
-    <section className="bg-white border-t border-warm px-6 md:px-[52px] py-20">
+    <section className="bg-white border-t border-warm px-6 md:px-[52px] flex-1 flex flex-col justify-center pt-[120px] pb-20">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

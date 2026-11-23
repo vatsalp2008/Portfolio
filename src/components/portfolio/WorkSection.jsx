@@ -17,7 +17,7 @@ export default function WorkSection() {
   };
 
   return (
-    <section className="px-6 md:px-[52px] py-[72px] bg-cream">
+    <section className="px-6 md:px-[52px] pt-[120px] pb-[72px] bg-cream">
 
       {/* Header */}
       <div className="flex items-center justify-between mb-7">
