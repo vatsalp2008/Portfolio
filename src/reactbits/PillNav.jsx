@@ -160,8 +160,9 @@ const PillNav = ({
     });
   };
 
-  const toggleMobileMenu = () => {
-    const newState = !isMobileMenuOpen;
+  // Opens or closes the mobile popover. Visibility is driven by GSAP, not by
+  // isMobileMenuOpen, so every close must run this animation.
+  const setMobileMenu = newState => {
     setIsMobileMenuOpen(newState);
 
     const hamburger = hamburgerRef.current;
@@ -207,8 +208,15 @@ const PillNav = ({
         });
       }
     }
+  };
 
+  const toggleMobileMenu = () => {
+    setMobileMenu(!isMobileMenuOpen);
     onMobileMenuClick?.();
+  };
+
+  const closeMobileMenu = () => {
+    if (isMobileMenuOpen) setMobileMenu(false);
   };
 
   const isExternalLink = href =>
@@ -333,7 +341,7 @@ const PillNav = ({
                 <Link
                   to={item.href}
                   className={`mobile-menu-link${activeHref === item.href ? ' is-active' : ''}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   {item.label}
                 </Link>
@@ -341,7 +349,7 @@ const PillNav = ({
                 <a
                   href={item.href}
                   className={`mobile-menu-link${activeHref === item.href ? ' is-active' : ''}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   {item.label}
                 </a>
